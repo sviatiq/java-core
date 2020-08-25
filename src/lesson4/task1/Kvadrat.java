@@ -1,6 +1,6 @@
-package lesson4;
+package lesson4.task1;
 
-public class Kvadrat implements Square{
+public class Kvadrat implements Square {
     private int firstSide;
     private int secondSide = firstSide;
 
