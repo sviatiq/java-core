@@ -49,6 +49,5 @@ public class MainClass {
         Order weddingOrder = new Order(1, Date.valueOf("2020-01-05"), OrderType.WEDDING, client1, passport1);
         System.out.println(weddingOrder);
 
-
     }
 }
