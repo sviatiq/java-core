@@ -1,5 +1,7 @@
 package lesson5.domain;
 
+import java.util.Objects;
+
 public class Contact {
     private int id;
     private String name;
@@ -89,5 +91,24 @@ public class Contact {
                 ", phone='" + phone + '\'' +
                 ", department=" + department +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contact contact = (Contact) o;
+        return id == contact.id &&
+                Objects.equals(name, contact.name) &&
+                Objects.equals(surname, contact.surname) &&
+                company == contact.company &&
+                Objects.equals(email, contact.email) &&
+                Objects.equals(phone, contact.phone) &&
+                department == contact.department;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, surname, company, email, phone, department);
     }
 }
