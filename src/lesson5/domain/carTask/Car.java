@@ -6,14 +6,14 @@ public class Car {
     private String model;
     private double power;
     private Owner owner;
-    private int price;
+    private double price;
     private int yearOfManufacture;
 
 
     public Car() {
     }
 
-    public Car(String model, double power, Owner owner, int price, int yearOfManufacture) {
+    public Car(String model, double power, Owner owner, double price, int yearOfManufacture) {
         this.model = model;
         this.power = power;
         this.owner = owner;
@@ -45,11 +45,11 @@ public class Car {
         this.owner = owner;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -78,7 +78,7 @@ public class Car {
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
         return Double.compare(car.power, power) == 0 &&
-                price == car.price &&
+                Double.compare(car.price, price) == 0 &&
                 yearOfManufacture == car.yearOfManufacture &&
                 Objects.equals(model, car.model) &&
                 Objects.equals(owner, car.owner);
